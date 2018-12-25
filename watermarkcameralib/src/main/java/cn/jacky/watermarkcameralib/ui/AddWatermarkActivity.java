@@ -25,10 +25,10 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.DecodeFormat;
 import com.bumptech.glide.request.RequestOptions;
-import com.zenchn.watermarkcamera.R;
 
 import java.io.IOException;
 
+import cn.jacky.watermarkcameralib.R;
 import cn.jacky.watermarkcameralib.util.DateUtils;
 import cn.jacky.watermarkcameralib.util.ImageUtil;
 import cn.jacky.watermarkcameralib.util.KeyboardUtils;

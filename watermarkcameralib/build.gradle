@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'maven'
 apply plugin: 'com.novoda.bintray-release'
 
 android {
@@ -37,12 +36,18 @@ dependencies {
 
 //配置library远程仓库
 publish {
-    userOrg = 'jackyhuang'
-    groupId = 'dev.jakcyh.watermarkcamera'
-    artifactId = 'androidWatermarkCamera'
-    publishVersion = '1.0.0'
-    desc = 'AndroidWatermarkCameraLibrary'
+    repoName = 'androidMaven'//远程仓库名字,不指明，默认是上传到maven
+    userOrg = 'jackyhuang'//bintray.com的用户名
+    groupId = 'com.jacky'//jcenter上的路径
+    artifactId = 'AndroidWatermarkCamera'//项目名称,一定要和jcenter的packageName一样
+    publishVersion = '0.0.1'//版本号
 
 //    website = "https://github.com/novoda/${rootProject.name}"
     website = "https://github.com/jackyHuangH/WatermarkCameraLib.git"
+}
+
+tasks.withType(Javadoc) {//防止编码问题
+    options.addStringOption('Xdoclint:none', '-quiet')
+    options.addStringOption('encoding', 'UTF-8')
+    options.addStringOption('charSet', 'UTF-8')
 }

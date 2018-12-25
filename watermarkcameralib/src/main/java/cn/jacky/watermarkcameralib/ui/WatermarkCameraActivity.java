@@ -37,7 +37,6 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.zenchn.watermarkcamera.R;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
@@ -47,6 +46,7 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
+import cn.jacky.watermarkcameralib.R;
 import cn.jacky.watermarkcameralib.util.AppUtils;
 import cn.jacky.watermarkcameralib.util.DateUtils;
 import cn.jacky.watermarkcameralib.util.DensityUtils;
