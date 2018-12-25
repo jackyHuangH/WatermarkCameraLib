@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.zenchn.watermarkcamera">
+          package="cn.jacky.watermarkcameralib">
 
     <application
         android:allowBackup="true"
@@ -8,11 +8,11 @@
         android:supportsRtl="true">
 
         <activity
-            android:name="dev.jackyh.watermarkcamera.ui.WatermarkCameraActivity"
+            android:name=".ui.WatermarkCameraActivity"
             android:configChanges="orientation|keyboardHidden|screenLayout|screenSize"
             android:theme="@style/Full_Screen_Theme"/>
 
-        <activity android:name="dev.jackyh.watermarkcamera.ui.AddWatermarkActivity"/>
+        <activity android:name=".ui.AddWatermarkActivity"/>
     </application>
 
 </manifest>
