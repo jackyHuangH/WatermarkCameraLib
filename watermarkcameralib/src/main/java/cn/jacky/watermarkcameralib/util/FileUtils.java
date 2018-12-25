@@ -1030,7 +1030,6 @@ public class FileUtils {
      * 安装APK包
      *
      * @param apkPath
-     * @return
      */
     public static void installApk(String apkPath, Activity activity) {
         String type = null;

@@ -57,7 +57,6 @@ public class ImageUtil {
      *
      * @param activity
      * @param uri
-     * @return
      */
     public static String getPath(Activity activity, Uri uri) {
         String[] projection = {MediaStore.Images.Media.DATA};
@@ -74,7 +73,6 @@ public class ImageUtil {
      * 解决小米手机上获取图片路径为null的情况
      *
      * @param intent
-     * @return
      */
     public static Uri getPictureUri(Context context, Intent intent) {
         Uri uri = intent.getData();
@@ -134,7 +132,6 @@ public class ImageUtil {
      * 压缩图片
      *
      * @param path
-     * @return
      * @throws IOException
      */
     public static Bitmap revitionImageSize(String path) {
@@ -170,7 +167,6 @@ public class ImageUtil {
      * 获取图片
      *
      * @param path
-     * @return
      * @throws IOException
      */
     public static Bitmap getImage(String path) {
@@ -188,8 +184,6 @@ public class ImageUtil {
 
     /**
      * 系统相册路径
-     *
-     * @return
      */
     public static String getSystemPhotoPath() {
         return Environment.getExternalStorageDirectory().getAbsolutePath() + "/WaterMarkPics";

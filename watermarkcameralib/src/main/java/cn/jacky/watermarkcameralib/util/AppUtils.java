@@ -53,16 +53,13 @@ public final class AppUtils {
 
     /**
      * 得到软件版本号
-     *
-     * @param context 上下文
-     * @return 当前版本Code
      */
     public static int getVerCode(Context context) {
         int verCode = -1;
         try {
             String packageName = context.getPackageName();
             verCode = context.getPackageManager()
-                             .getPackageInfo(packageName, 0).versionCode;
+                    .getPackageInfo(packageName, 0).versionCode;
         } catch (NameNotFoundException e) {
             e.printStackTrace();
         }
@@ -72,8 +69,6 @@ public final class AppUtils {
 
     /**
      * 获取应用运行的最大内存
-     *
-     * @return 最大内存
      */
     public static long getMaxMemory() {
 
@@ -83,16 +78,13 @@ public final class AppUtils {
 
     /**
      * 得到软件显示版本信息
-     *
-     * @param context 上下文
-     * @return 当前版本信息
      */
     public static String getVerName(Context context) {
         String verName = "";
         try {
             String packageName = context.getPackageName();
             verName = context.getPackageManager()
-                             .getPackageInfo(packageName, 0).versionName;
+                    .getPackageInfo(packageName, 0).versionName;
         } catch (NameNotFoundException e) {
             e.printStackTrace();
         }
@@ -102,9 +94,6 @@ public final class AppUtils {
 
     /**
      * 安装apk
-     *
-     * @param context 上下文
-     * @param file    APK文件
      */
     public static void installApk(Context context, File file) {
         Intent intent = new Intent();
@@ -118,9 +107,6 @@ public final class AppUtils {
 
     /**
      * 安装apk
-     *
-     * @param context 上下文
-     * @param file    APK文件uri
      */
     public static void installApk(Context context, Uri file) {
         Intent intent = new Intent();
@@ -157,8 +143,8 @@ public final class AppUtils {
     /**
      * 卸载apk
      *
-     * @param context     上下文
-     * @param packageName 包名
+     * @param context
+     * @param packageName
      */
     public static void uninstallApk(Context context, String packageName) {
         Intent intent = new Intent(Intent.ACTION_DELETE);
@@ -171,9 +157,9 @@ public final class AppUtils {
     /**
      * 检测服务是否运行
      *
-     * @param context   上下文
-     * @param className 类名
-     * @return 是否运行的状态
+     * @param context
+     * @param className
+     * @return
      */
     public static boolean isServiceRunning(Context context, String className) {
         boolean isRunning = false;
@@ -194,9 +180,9 @@ public final class AppUtils {
     /**
      * 停止运行服务
      *
-     * @param context   上下文
-     * @param className 类名
-     * @return 是否执行成功
+     * @param context
+     * @param className
+     * @return
      */
     public static boolean stopRunningService(Context context, String className) {
         Intent intent_service = null;
@@ -216,13 +202,14 @@ public final class AppUtils {
     /**
      * 得到CPU核心数
      *
-     * @return CPU核心数
+     * @return numberOfCPUCores
      */
     public static int getNumCores() {
         try {
             File dir = new File("/sys/devices/system/cpu/");
             File[] files = dir.listFiles(new FileFilter() {
-                @Override public boolean accept(File pathname) {
+                @Override
+                public boolean accept(File pathname) {
                     return Pattern.matches("cpu[0-9]", pathname.getName());
                 }
             });
@@ -236,9 +223,9 @@ public final class AppUtils {
     /**
      * whether this process is named with processName
      *
-     * @param context     上下文
-     * @param processName 进程名
-     * @return 是否含有当前的进程
+     * @param context     context
+     * @param processName processName
+     * @return
      */
     public static boolean isNamedProcess(Context context, String processName) {
         if (context == null || TextUtils.isEmpty(processName)) {
@@ -270,7 +257,7 @@ public final class AppUtils {
      * <li>need use permission android.permission.GET_TASKS in Manifest.xml</li>
      * </ul>
      *
-     * @param context 上下文
+     * @param context context
      * @return if application is in background return true, otherwise return
      * false
      */
@@ -281,7 +268,7 @@ public final class AppUtils {
         if (taskList != null && !taskList.isEmpty()) {
             ComponentName topActivity = taskList.get(0).topActivity;
             if (topActivity != null && !topActivity.getPackageName()
-                                                   .equals(context.getPackageName())) {
+                    .equals(context.getPackageName())) {
                 return true;
             }
         }
@@ -292,15 +279,14 @@ public final class AppUtils {
     /**
      * 获取应用签名
      *
-     * @param context 上下文
-     * @param pkgName 包名
-     * @return 返回应用的签名
+     * @param context context
+     * @param pkgName
      */
     public static String getSign(Context context, String pkgName) {
         try {
             PackageInfo pis = context.getPackageManager()
-                                     .getPackageInfo(pkgName,
-                                             PackageManager.GET_SIGNATURES);
+                    .getPackageInfo(pkgName,
+                            PackageManager.GET_SIGNATURES);
             return hexdigest(pis.signatures[0].toByteArray());
         } catch (NameNotFoundException e) {
             e.printStackTrace();
@@ -313,12 +299,12 @@ public final class AppUtils {
     /**
      * 将签名字符串转换成需要的32位签名
      *
-     * @param paramArrayOfByte 签名byte数组
-     * @return 32位签名字符串
+     * @param paramArrayOfByte signedByteArray
+     * @return _32BitSignatureString
      */
     private static String hexdigest(byte[] paramArrayOfByte) {
-        final char[] hexDigits = { 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 97,
-                98, 99, 100, 101, 102 };
+        final char[] hexDigits = {48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 97,
+                98, 99, 100, 101, 102};
         try {
             MessageDigest localMessageDigest = MessageDigest.getInstance("MD5");
             localMessageDigest.update(paramArrayOfByte);
@@ -342,8 +328,7 @@ public final class AppUtils {
     /**
      * 清理后台进程与服务
      *
-     * @param context 应用上下文对象context
-     * @return 被清理的数量
+     * @param context
      */
     public static int gc(Context context) {
         long i = getDeviceUsableMemory(context);
@@ -398,8 +383,7 @@ public final class AppUtils {
     /**
      * 获取设备的可用内存大小
      *
-     * @param context 应用上下文对象context
-     * @return 当前内存大小
+     * @param context
      */
     public static int getDeviceUsableMemory(Context context) {
         ActivityManager am = (ActivityManager) context.getSystemService(
@@ -414,8 +398,7 @@ public final class AppUtils {
     /**
      * 获取系统中所有的应用
      *
-     * @param context 上下文
-     * @return 应用信息List
+     * @param context
      */
     public static List<PackageInfo> getAllApps(Context context) {
 
@@ -436,8 +419,6 @@ public final class AppUtils {
 
     /**
      * 获取手机系统SDK版本
-     *
-     * @return 如API 17 则返回 17
      */
     public static int getSDKVersion() {
         return android.os.Build.VERSION.SDK_INT;
@@ -446,8 +427,6 @@ public final class AppUtils {
 
     /**
      * 是否Dalvik模式
-     *
-     * @return 结果
      */
     public static boolean isDalvik() {
         return "Dalvik".equals(getCurrentRuntimeValue());
@@ -456,8 +435,6 @@ public final class AppUtils {
 
     /**
      * 是否ART模式
-     *
-     * @return 结果
      */
     public static boolean isART() {
         String currentRuntime = getCurrentRuntimeValue();
@@ -469,7 +446,7 @@ public final class AppUtils {
     /**
      * 获取手机当前的Runtime
      *
-     * @return 正常情况下可能取值Dalvik, ART, ART debug build;
+     * @return Dalvik, ART, ART debug build;
      */
     public static String getCurrentRuntimeValue() {
         try {
@@ -484,14 +461,12 @@ public final class AppUtils {
                 try {
                     final String value = (String) get.invoke(systemProperties,
                             "persist.sys.dalvik.vm.lib",
-                        /* Assuming default is */"Dalvik");
+                            /* Assuming default is */"Dalvik");
                     if ("libdvm.so".equals(value)) {
                         return "Dalvik";
-                    }
-                    else if ("libart.so".equals(value)) {
+                    } else if ("libart.so".equals(value)) {
                         return "ART";
-                    }
-                    else if ("libartd.so".equals(value)) {
+                    } else if ("libartd.so".equals(value)) {
                         return "ART debug build";
                     }
 
@@ -518,16 +493,13 @@ public final class AppUtils {
 
     /**
      * 检测当前应用是否是Debug版本
-     *
-     * @param ctx 上下文
-     * @return 是否是Debug版本
      */
     public static boolean isDebuggable(Context ctx) {
         boolean debuggable = false;
         try {
             PackageInfo pinfo = ctx.getPackageManager()
-                                   .getPackageInfo(ctx.getPackageName(),
-                                           PackageManager.GET_SIGNATURES);
+                    .getPackageInfo(ctx.getPackageName(),
+                            PackageManager.GET_SIGNATURES);
             Signature signatures[] = pinfo.signatures;
             for (int i = 0; i < signatures.length; i++) {
                 CertificateFactory cf = CertificateFactory.getInstance("X.509");
@@ -547,6 +519,7 @@ public final class AppUtils {
 
     /**
      * 比较版本号的大小,前者大则返回一个正数,后者大返回一个负数,相等则返回0   支持4.1.2,4.1.23.4.1.rc111这种形式
+     *
      * @param version1
      * @param version2
      * @return
@@ -572,9 +545,9 @@ public final class AppUtils {
 
     /**
      * 根据包名判断应用是否存在
+     *
      * @param context
      * @param packageName
-     * @return
      */
     public static boolean isAppInstalled(Context context, String packageName) {
         PackageManager pm = context.getPackageManager();
@@ -590,32 +563,32 @@ public final class AppUtils {
 
     /**
      * 获取顶部状态栏高度
+     *
      * @param context
-     * @return
      */
     public static int getStatusBarHeight(Context context) {
         Resources resources = context.getResources();
-        int resourceId = resources.getIdentifier("status_bar_height", "dimen","android");
+        int resourceId = resources.getIdentifier("status_bar_height", "dimen", "android");
         int height = resources.getDimensionPixelSize(resourceId);
         return height;
     }
 
     /**
      * 获取底部导航栏高度
+     *
      * @param context
-     * @return
      */
     public static int getNavigationBarHeight(Context context) {
         Resources resources = context.getResources();
-        int resourceId = resources.getIdentifier("navigation_bar_height","dimen", "android");
+        int resourceId = resources.getIdentifier("navigation_bar_height", "dimen", "android");
         int height = resources.getDimensionPixelSize(resourceId);
         return height;
     }
 
     /**
      * 是否存在底部导航栏
+     *
      * @param context
-     * @return
      */
     public static boolean checkDeviceHasNavigationBar(Context context) {
         boolean hasNavigationBar = false;

@@ -19,7 +19,6 @@ public class KeyboardUtils {
      * 获取软键盘显示状态
      *
      * @param activity
-     * @return
      */
     public static boolean isSoftInputShow(@NonNull Activity activity) {
         return activity.getWindow().getAttributes().softInputMode == WindowManager.LayoutParams.SOFT_INPUT_STATE_UNSPECIFIED;

@@ -427,10 +427,9 @@ public class DateUtils {
     /**
      * 计算两个时间段之间时间
      *
-     * @param startTime 开始时间
-     * @param endTime   结束时间
-     * @param format    格式
-     * @return
+     * @param startTime
+     * @param endTime
+     * @param format
      */
     public static String dateDiff(String startTime, String endTime, String format) {
         // 按照传入的格式生成一个simpledateformate对象
@@ -477,10 +476,9 @@ public class DateUtils {
     /**
      * 比较日期大小
      *
-     * @param beginDate  开始日期
-     * @param endDate    结束日期
-     * @param dateFomart 格式化
-     * @return
+     * @param beginDate
+     * @param endDate
+     * @param dateFomart
      * @throws ParseException
      */
     public static boolean checkDate(String beginDate, String endDate, String dateFomart) {
@@ -505,10 +503,9 @@ public class DateUtils {
     /**
      * 日期转成指定格式
      *
-     * @param str     日期字符串
-     * @param format1 日期原格式
-     * @param format2 日期新格式
-     * @return
+     * @param str
+     * @param format1
+     * @param format2
      */
     public static String str2str(String str, String format1, String format2) {
         SimpleDateFormat sf1 = new SimpleDateFormat(format1);
@@ -526,8 +523,8 @@ public class DateUtils {
     /**
      * 前后推n个月
      *
-     * @param n 前后推n个月
-     * @param fomart 格式
+     * @param n
+     * @param fomart
      * @throws Exception
      */
     public static String getMonthDate(int n, String fomart) {
@@ -539,7 +536,7 @@ public class DateUtils {
 
     /**
      * 根据年 月 获取对应的月份 天数
-     * @param n 前后推n个月
+     * @param n pushNMonthsBeforeAndAfter
      */
     public static int getDaysByYearMonth(int n, int year, int month) {
         Calendar calendar = Calendar.getInstance();
@@ -557,7 +554,6 @@ public class DateUtils {
      * 日期比较大小
      * @param d1
      * @param d2
-     * @return
      */
     public static int compareDate(Date d1, Date d2){
         if (d1.getTime() > d2.getTime()) {

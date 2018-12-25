@@ -34,7 +34,6 @@ public class DensityUtils {
      * dip to px
      *
      * @param dip
-     * @return
      */
     public static int dip2px(Context context, float dip) {
         float density = getDensity(context);
@@ -46,7 +45,6 @@ public class DensityUtils {
      *
      * @param context
      * @param px
-     * @return
      */
     public static int px2dip(Context context, float px) {
         float density = getDensity(context);
@@ -59,7 +57,6 @@ public class DensityUtils {
      * get screen width
      *
      * @param context
-     * @return
      */
     public static int getDisplayWidth(Context context) {
         initDisplayMetrics(context);
@@ -70,7 +67,6 @@ public class DensityUtils {
      * get screen height
      *
      * @param context
-     * @return
      */
     public static int getDisplayHeight(Context context) {
         initDisplayMetrics(context);
@@ -81,7 +77,6 @@ public class DensityUtils {
      * get screen density
      *
      * @param context
-     * @return
      */
     public static float getDensity(Context context) {
         initDisplayMetrics(context);
@@ -93,7 +88,6 @@ public class DensityUtils {
      * get screen density dpi
      *
      * @param context
-     * @return
      */
     public static int getDensityDpi(Context context) {
         initDisplayMetrics(context);
@@ -113,7 +107,6 @@ public class DensityUtils {
      * is landscape
      *
      * @param context
-     * @return
      */
     public static boolean isLandscape(Context context) {
         return context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
@@ -123,7 +116,6 @@ public class DensityUtils {
      * is portrait
      *
      * @param context
-     * @return
      */
     public static boolean isPortrait(Context context) {
         return context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT;
