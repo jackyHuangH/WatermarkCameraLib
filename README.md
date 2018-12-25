@@ -1,8 +1,8 @@
 # WatermarkCamera
 watermarkCamera for android which compat 6.0+
 # 安卓简单水印相机,可以添加简单水印的相机
-![效果图](https://github.com/huangzijie0303/WatermarkCamera/blob/master/art/TIM%E5%9B%BE%E7%89%8720171108174700.png)
-![添加水印](https://github.com/huangzijie0303/WatermarkCamera/blob/master/art/TIM%E5%9B%BE%E7%89%8720171108175035.png)
+![效果图](https://github.com/jackyHuangH/WatermarkCameraLib/blob/master/watermarkcameralib/arts/TIM%E5%9B%BE%E7%89%8720171108174700.png)
+![添加水印](https://github.com/jackyHuangH/WatermarkCameraLib/blob/master/watermarkcameralib/arts/TIM%E5%9B%BE%E7%89%8720171108175035.png)
 
 
 ## 使用方式：
