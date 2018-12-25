@@ -43,5 +43,6 @@ publish {
     publishVersion = '1.0.0'
     desc = 'AndroidWatermarkCameraLibrary'
 
-    website = "https://github.com/novoda/${rootProject.name}"
+//    website = "https://github.com/novoda/${rootProject.name}"
+    website = "https://github.com/jackyHuangH/WatermarkCameraLib.git"
 }
