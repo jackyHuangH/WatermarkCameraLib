@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">WatermarkCamera</string>
+    <string name="close_water_mark">关闭水印</string>
+    <string name="done">完成</string>
+    <string name="back_string">返回</string>
+    <string name="water_mark_hint">点击输入水印文字</string>
+</resources>
