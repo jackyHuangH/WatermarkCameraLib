@@ -6,8 +6,9 @@ watermarkCamera for android which compat 6.0+
 
 
 ## 使用方式：
-### 第一步：下载项目库添加到你的项目中依赖
-     暂时未上传至jcenter中，待续....
+### 第一步：添加到你的项目依赖中（这是我的第一个jcenter项目，有点小鸡动^_^）
+    implementation 'com.jacky:AndroidWatermarkCamera:0.0.1'
+    
 ### 第二步：调用如下方式跳转到拍照界面：
 
                 Intent intent = new Intent(Activity from, WatermarkCameraActivity.class);
