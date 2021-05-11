@@ -5,9 +5,19 @@ watermarkCamera for android which compat 6.0+
 ![添加水印](https://github.com/jackyHuangH/WatermarkCameraLib/blob/master/watermarkcameralib/arts/TIM%E5%9B%BE%E7%89%8720171108175035.png)
 
 
-## 使用方式：
-### 第一步：添加到你的项目依赖中（这是我的第一个jcenter项目，有点小鸡动^_^）
-    implementation 'com.jacky:AndroidWatermarkCamera:0.0.1'
+## 项目已迁移到jitpack发布（2021.5.11），使用方式：
+### 第一步：工程build.gradle添加jitpack仓库：
+    allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+    
+    然后添加到你的项目依赖中
+    dependencies {
+	        implementation 'com.github.jackyHuangH:WatermarkCameraLib:0.0.1'
+	}    
     
 ### 第二步：调用如下方式跳转到拍照界面：
 
